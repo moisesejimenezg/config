@@ -1,17 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-call vundle#end()
-
 """ Config
 
 "autocmd VimEnter * NERDTree
@@ -100,6 +89,8 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 """ Bindings
+
+let mapleader = " "
 
 " Search in buffers
 nnoremap <Leader>o :Buffers <cr>
