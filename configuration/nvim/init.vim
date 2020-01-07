@@ -102,12 +102,12 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 """ Bindings
 
 " Search in buffers
-nnoremap <C-O> :Buffers <cr>
-nnoremap <C-P> :FZF <cr>
-nnoremap <C-I> :Lines <cr>
+nnoremap <m-O> :Buffers <cr>
+nnoremap <m-P> :FZF <cr>
+nnoremap <m-I> :Lines <cr>
 
 " Find everywhere
-nnoremap <C-F> :Find <cr>
+nnoremap <m-F> :Find <cr>
 
 " Move line up / down
 nnoremap <m-j> :m .+1<cr>
