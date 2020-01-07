@@ -9,7 +9,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
 
 """ Config
 
@@ -36,7 +37,6 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'benmills/vimux'
 " Plug 'jsfaint/gen_tags.vim'
-" Plug 'scrooloose/nerdcommenter'
 " Plug 'taketwo/vim-ros'
 
 Plug 'scrooloose/nerdtree'
@@ -44,43 +44,40 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'ervandew/supertab'
 
+" Gutter signs
 Plug 'airblade/vim-gitgutter'
 
+" Bottom status line
 Plug 'vim-airline/vim-airline'
 
+" git short cuts
 Plug 'tpope/vim-fugitive'
-
-Plug 'tpope/vim-surround'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 
 " .h - .cpp switch
 Plug 'ericcurtin/CurtineIncSw.vim'
 
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'grailbio/bazel-compilation-database'
+
 " Bazel support
 
 Plug 'google/vim-maktaba'
 
-Plug 'bazelbuild/vim-bazel'
+" Plug 'google/vim-codefmt'
 
-Plug 'arakashic/chromatica.nvim'
+" Plug 'bazelbuild/vim-bazel'
+
+" Plug 'arakashic/chromatica.nvim'
 
 Plug 'rhysd/vim-clang-format'
-
-Plug 'lervag/vimtex'
-
-Plug 'blindFS/vim-taskwarrior'
-
-Plug 'grailbio/bazel-compilation-database'
-
-Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -123,16 +120,15 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Switch Source to Header
-nnoremap <m-h> :call CurtineIncSw()<cr>
-
-" Clang Format
-nnoremap <m-C-L> :ClangFormat <cr>
-
-vnoremap <m-x> !xmllint --format - <cr>
+" nnoremap <m-h> :call CurtineIncSw()<cr>
 
 nnoremap <C-M> :NERDTree <cr>
 
 nnoremap <C-Q> :NERDTreeFind <cr>
+
+vnoremap <m-9> :YcmCompleter GoToDefinition <cr>
+vnoremap <m-0> :YcmCompleter GoToDeclaration <cr>
+nnoremap <m-9> :YcmCompleter GoToInclude <cr>
 
 
 " Default new pane
@@ -141,13 +137,8 @@ set splitright
 
 " Configuration
 
-" Chromatica
-let g:chromatica#enable_at_startup=1
-let g:chromatica#responsive_mode=1
-let g:chromatica#libclang_path="/usr/lib/llvm-6.0/lib/libclang.so.1"
-
 " YCM
-let g:ycm_confirm_extra_conf = 0
+" let g:ycm_confirm_extra_conf = 0
 
 " clang format
 let g:clang_format#auto_format = 1
