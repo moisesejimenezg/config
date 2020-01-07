@@ -48,7 +48,8 @@ beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "x-terminal-emulator"
-terminal = "stterm fish"
+-- terminal = "stterm fish"
+terminal = "stterm"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -103,9 +104,13 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-lockscreen = function() awful.util.spawn("xscreensaver-command --lock") end
+--- Bindings
+
+-- lockscreen = function() awful.util.spawn("xscreensaver-command --lock") end
+lockscreen = function() awful.util.spawn_with_shell("fish ~/Documents/Scripts/lock_screen.fish") end
 dmenu = function() awful.util.spawn("dmenu_run") end
 rofi = function() awful.util.spawn("rofi -show combi -combi-modi drun,run -modi combi") end
+spotifycli_playpause = function() awful.util.spawn_with_shell("fish ~/Documents/Scripts/spotifycli_playpause.fish") end
 
 
 mymainmenu = awful.menu({ items = {
@@ -291,7 +296,8 @@ globalkeys = awful.util.table.join(
     -- Custom
     awful.key({ modkey }, "l", lockscreen),
     awful.key({ modkey, "Shift" }, "u", dmenu),
-    awful.key({ modkey }, "u", rofi)
+    awful.key({ modkey }, "u", rofi),
+    awful.key({}, "#172", spotifycli_playpause)
 )
 
 clientkeys = awful.util.table.join(
@@ -472,7 +478,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 do
     local cmds =
     {
-        "xscreensaver"
+        --"xscreensaver",
+        "slack"
         --- "spotify"
     }
     for _,i in pairs(cmds) do
@@ -482,7 +489,6 @@ do
     {
         "~/.config/autostart/keyboard_autostart.sh",
         "~/.config/autostart/lxrandr_autostart.sh",
-        "~/.config/autostart/slack-term_autostart.sh"
     }
     for _,i in pairs(scripts) do
         awful.util.spawn_with_shell(i)
