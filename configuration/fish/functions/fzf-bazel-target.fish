@@ -1,0 +1,25 @@
+  function fzf-bazel-target -d "List bazel targets"
+    set -l commandline (__fzf_parse_commandline)
+    set -l dir $commandline[1]
+    set -l fzf_query $commandline[2]
+    # "-path \$dir'*/\\.*'" matches hidden files/folders inside $dir but not
+    # $dir itself, even if hidden.
+
+    set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
+    begin
+      set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS"
+      eval "command bazel query //... | "(__fzfcmd)' -m --query "'$fzf_query'"' | while read -l r; set result $result $r; end
+    end
+    if [ -z "$result" ]
+      commandline -f repaint
+      return
+    else
+      # Remove last token from commandline.
+      commandline -t ""
+    end
+    for i in $result
+      commandline -it -- (string escape $i)
+      commandline -it -- ' '
+    end
+    commandline -f repaint
+  end
