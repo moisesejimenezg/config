@@ -68,6 +68,9 @@ Plug 'google/vim-maktaba'
 
 Plug 'rhysd/vim-clang-format'
 
+" Color schemes
+Plug 'rafi/awesome-vim-colorschemes'
+
 call plug#end()
 
 """ Custom Commands
@@ -89,7 +92,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 """ Bindings
-
 let mapleader = " "
 
 " Search in buffers
@@ -105,22 +107,28 @@ nnoremap <m-j> :m .+1<cr>
 nnoremap <m-k> :m .-2<cr>
 
 " Navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
-" Switch Source to Header
-" nnoremap <m-h> :call CurtineIncSw()<cr>
-
-nnoremap <C-M> :NERDTree <cr>
-
-nnoremap <C-Q> :NERDTreeFind <cr>
-
+" Code navigation
 vnoremap <m-9> :YcmCompleter GoToDefinition <cr>
 vnoremap <m-0> :YcmCompleter GoToDeclaration <cr>
 nnoremap <m-9> :YcmCompleter GoToInclude <cr>
 
+" Directory management
+nnoremap <Leader>m :NERDTree <cr>
+nnoremap <Leader>q :NERDTreeFind <cr>
+
+" Refactoring
+vnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+
+" Resizing panes
+nnoremap <Leader>L :vertical resize +5 <cr>
+nnoremap <Leader>H :vertical resize -5 <cr>
+nnoremap <Leader>J :resize -5 <cr>
+nnoremap <Leader>K :resize +5 <cr>
 
 " Default new pane
 set splitbelow
@@ -134,3 +142,5 @@ set splitright
 " clang format
 let g:clang_format#auto_format = 1
 let g:clang_format#command = "/usr/bin/clang-format-6.0"
+
+colorscheme dracula
