@@ -22,6 +22,8 @@ source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/bindings.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/csv.vim
+source $HOME/.config/nvim/quickhl.vim
 source $HOME/.config/nvim/vista.vim
 
 " Default new pane
@@ -31,5 +33,7 @@ set splitright
 " clang format
 let g:clang_format#auto_format = 1
 let g:clang_format#command = "/usr/bin/clang-format-6.0"
+
+let g:webdevicons_enable = 1
 
 colorscheme OceanicNext

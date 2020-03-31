@@ -19,17 +19,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-" .h - .cpp switch
-Plug 'ericcurtin/CurtineIncSw.vim'
-
 " Auto complete
-" Plug 'Valloric/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'grailbio/bazel-compilation-database'
-
-" Bazel support
-
-Plug 'google/vim-maktaba'
 
 Plug 'rhysd/vim-clang-format'
 
@@ -41,5 +33,17 @@ Plug 'liuchengxu/vista.vim'
 
 " LaTeX
 Plug 'lervag/vimtex'
+
+" Python autocompletion
+Plug 'davidhalter/jedi-vim'
+
+" Fonts
+Plug 'ryanoasis/vim-devicons'
+
+" CSV files
+Plug 'chrisbra/csv.vim'
+
+" Highlighting
+Plug 't9md/vim-quickhl'
 
 call plug#end()

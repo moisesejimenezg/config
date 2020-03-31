@@ -33,6 +33,10 @@ let g:vista#renderer#enable_icon = 1
 
 " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
 let g:vista#renderer#icons = {
+\   "classes": "\ue22b",
 \   "function": "\uf794",
+\   "members": "\uf12e",
+\   "namespaces": "\ufcd0",
+\   "prototypes": "\ue0cd",
 \   "variable": "\uf71b",
 \  }
