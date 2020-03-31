@@ -13,8 +13,22 @@ if status --is-interactive
     source "$BASE16_SHELL/profile_helper.fish"
 end
 
+# bmwrpp
+if test -e /etc/bmwrpp-bootstrap/zshrc
+  bass source /etc/bmwrpp-bootstrap/bashrc
+else
+  echo "bmwrpp-bootstrap not installed, please remove BMWRPP section from /home/jimenez/.zshrc"
+end
+
+# ros
+bass source /opt/ros/melodic/setup.bash
+source /opt/ros/melodic/share/rosbash/rosfish
+
 # Environment variables
 set -gx PATH /usr/lib/ccache $PATH
+set -gx ROS_IP localhost
+set -gx ROS_HOSTNAME localhost
+set -gx ROS_MASTER_URI http://$ROS_IP:11311
 set -gx FZF_DEFAULT_COMMAND 'rg --color=auto --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!bazel-*/*"'
 set -gx RIPGREP_CONFIG_PATH ~/.ripgreprc
 
@@ -29,6 +43,7 @@ set -gx PATH $HOME/.config/fish/functions $PATH
 set -gx PATH $HOME/.config/autostart $PATH
 
 # tool aliases
+alias hub=hub
 alias cat=bat
 alias ls=exa
 
@@ -45,13 +60,17 @@ abbr gstal git stash list
 abbr gstad git stash drop
 
 # utility aliases
+# search
+abbr fft fish_find_text
 
 set -gx bazel_cache $HOME/.ccache
 # bazel aliases
-abbr bba bazel build --config=default
-abbr bta bazel test --config=default
+abbr bba bazel build --config=adp
+abbr bta bazel test --config=adp
+abbr bbh bazel build --sandbox_writable_path ~/.ccache --local_test_jobs=1 --define=target_platform=hPAD --cxxopt=-Wno-error=deprecated-declarations --cache_test_results=no --test_output=streamed
+abbr bth bazel test --sandbox_writable_path ~/.ccache --local_test_jobs=1 --define=target_platform=hPAD --cxxopt=-Wno-error=deprecated-declarations --cache_test_results=no --test_output=streamed
 
 # theme
 set -g theme_color_scheme dracula
 
-task
+#task

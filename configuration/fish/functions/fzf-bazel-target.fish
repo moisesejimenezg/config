@@ -8,7 +8,7 @@
     set -q FZF_TMUX_HEIGHT; or set FZF_TMUX_HEIGHT 40%
     begin
       set -lx FZF_DEFAULT_OPTS "--height $FZF_TMUX_HEIGHT --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS"
-      eval "command bazel query //... | "(__fzfcmd)' -m --query "'$fzf_query'"' | while read -l r; set result $result $r; end
+      eval "command bazel query //application/adp/... | "(__fzfcmd)' -m --query "'$fzf_query'"' | while read -l r; set result $result $r; end
     end
     if [ -z "$result" ]
       commandline -f repaint
