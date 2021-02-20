@@ -8,6 +8,7 @@ abbr gau git add -u
 abbr gaup git add -up
 abbr gbd git branch -d
 abbr gbD git branch -D
+abbr gcm git commit -S -m
 abbr gcam git commit --amend
 abbr gcob git checkout -b
 abbr gds git diff --stat
