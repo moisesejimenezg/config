@@ -12,6 +12,23 @@
              "threads": 3
          }
        }
+    },
+    "jedi":{
+      "filetypes": ["py"],
+      "enable": true,
+      "startupMessage": false,
+      "markupKindPreferred": "plaintext",
+      "trace.server": "off",
+      "jediSettings.autoImportModules": [],
+      "executable.command": "jedi-language-server",
+      "executable.args": [],
+      "completion.disableSnippets": false,
+      "completion.resolveEagerly": false,
+      "diagnostics.enable": true,
+      "diagnostics.didOpen": true,
+      "diagnostics.didChange": true,
+      "diagnostics.didSave": true,
+      "workspace.extraPaths": []
     }
   }
 }

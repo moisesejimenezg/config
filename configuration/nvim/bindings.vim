@@ -18,19 +18,16 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
+nnoremap <Leader>q <C-W>q
 
 " Directory management
-nnoremap <Leader>m :NERDTree <cr>
-nnoremap <Leader>q :NERDTreeFind <cr>
+nnoremap <Leader>m :CocCommand explorer <cr>
 
 " Refactoring
-vnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>r :CocCommand document.renameCurrentWord <cr>
 
 " Resizing panes
 nnoremap <Leader>L :vertical resize +5 <cr>
 nnoremap <Leader>H :vertical resize -5 <cr>
 nnoremap <Leader>J :resize -5 <cr>
 nnoremap <Leader>K :resize +5 <cr>
-
-" vista
-nnoremap <Leader>n :Vista!! <cr>
