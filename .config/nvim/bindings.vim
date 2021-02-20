@@ -7,7 +7,7 @@ nnoremap <Leader>P :FZF <cr>
 nnoremap <Leader>I :Lines <cr>
 
 " Find everywhere
-nnoremap <Leader>f :Find <cr>
+nnoremap <Leader>F :Find <cr>
 
 " Move line up / down
 nnoremap <m-j> :m .+1<cr>
@@ -25,6 +25,7 @@ nnoremap <Leader>m :CocCommand explorer <cr>
 
 " Refactoring
 nnoremap <Leader>r :CocCommand document.renameCurrentWord <cr>
+nnoremap <Leader>h :nohlsearch <cr>
 
 " Resizing panes
 nnoremap <Leader>L :vertical resize +5 <cr>
