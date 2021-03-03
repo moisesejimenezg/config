@@ -32,3 +32,4 @@ set -x FZF_CTRL_T_OPTS '--preview \'cat {}\''
 set -x FZF_ALT_C_COMMAND 'rg --files --null | xargs -0 dirname | uniq'
 
 set -x XDG_CONFIG_HOME '/home/mjimenez/.config'
+starship init fish | source
