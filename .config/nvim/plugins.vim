@@ -27,8 +27,8 @@ Plug 'rhysd/vim-clang-format'
 " Color schemes
 Plug 'rafi/awesome-vim-colorschemes'
 
-" Python autocompletion
-" Plug 'davidhalter/jedi-vim'
+" Black
+Plug 'psf/black', { 'branch': 'stable' }
 
 " Fonts
 Plug 'ryanoasis/vim-devicons'

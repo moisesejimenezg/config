@@ -36,4 +36,7 @@ let g:clang_format#command = "clang-format"
 
 let g:webdevicons_enable = 1
 
+" black
+autocmd BufWritePre *.py execute ':Black'
+
 colorscheme OceanicNext
