@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mjimenez/.oh-my-zsh"
+export ZSH="/home/jimenez/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,6 +74,7 @@ plugins=(
     bazel
     fzf
     git
+    jump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,10 +104,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-if [ "$TMUX" = "" ]; then tmux; fi
+
+#if [ "$TMUX" = "" ]; then tmux; fi
 
 # functions
 source $HOME/.config/zsh/functions/git_branch.zsh
+source $HOME/.config/zsh/functions/bazel_options.zsh
+source $HOME/.config/zsh/local_setup.zsh
+source $HOME/.config/zsh/aliases.zsh
+
+###  RPP-BEGIN  ###
+# Do not change content between BEGIN and END!
+# This section is managed by a script.
+if [[ -d "/usr/libexec/rpp_zshrc.d" ]]; then
+    for rc_script in "/usr/libexec/rpp_zshrc.d/"*; do
+      source "${rc_script}"
+    done
+fi
+###  RPP-END  ###

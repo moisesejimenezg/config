@@ -1,7 +1,7 @@
 #!/bin/zsh
-function git_branch()
+function bazel_options()
 {
-    local cmd="git branch"
+    local cmd="cat $HOME/.config/zsh/functions/bazel_options"
     local item
     eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --bind=ctrl-z:ignore $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" $(__fzfcmd) -m "$@" | while read item; do
         echo -n "${(q)item} "
@@ -11,12 +11,13 @@ function git_branch()
     return $ret
 }
 
-fzf-git-branch-widget()
+fzf-bazel-options-widget()
 {
-  LBUFFER="${LBUFFER}$(git_branch)"
+  LBUFFER="${LBUFFER}$(bazel_options)"
   local ret=$?
   zle reset-prompt
   return $ret
 }
-zle -N fzf-git-branch-widget
-bindkey '^b' fzf-git-branch-widget
+
+zle -N fzf-bazel-options-widget
+bindkey '^o' fzf-bazel-options-widget
