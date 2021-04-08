@@ -32,7 +32,7 @@ set splitright
 
 " clang format
 let g:clang_format#auto_format = 1
-let g:clang_format#command = "clang-format"
+let g:clang_format#command = "clang-format-11"
 
 let g:webdevicons_enable = 1
 
