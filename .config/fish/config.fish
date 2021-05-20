@@ -1,8 +1,3 @@
-if status is-interactive
-and not set -q TMUX
-    exec tmux
-end
-
 # git abbreviations
 abbr gau git add -u
 abbr gaup git add -up
@@ -32,4 +27,3 @@ set -x FZF_CTRL_T_OPTS '--preview \'cat {}\''
 set -x FZF_ALT_C_COMMAND 'rg --files --null | xargs -0 dirname | uniq'
 
 set -x XDG_CONFIG_HOME '/home/mjimenez/.config'
-starship init fish | source
