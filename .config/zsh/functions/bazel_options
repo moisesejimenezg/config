@@ -1,4 +1,3 @@
 --test_filter=
 --compilation_mode=dbg
---define factory=dual
 --remote_cache=

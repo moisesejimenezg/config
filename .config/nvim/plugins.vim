@@ -24,6 +24,8 @@ Plug 'grailbio/bazel-compilation-database'
 
 Plug 'rhysd/vim-clang-format'
 
+Plug 'OmniSharp/omnisharp-vim'
+
 " Color schemes
 Plug 'rafi/awesome-vim-colorschemes'
 

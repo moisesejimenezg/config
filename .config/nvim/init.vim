@@ -39,4 +39,7 @@ let g:webdevicons_enable = 1
 " black
 autocmd BufWritePre *.py execute ':Black'
 
+" omnisharp
+autocmd BufWritePre *.cs execute ':OmniSharpCodeFormat'
+
 colorscheme OceanicNext
