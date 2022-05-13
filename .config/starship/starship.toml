@@ -1,0 +1,17 @@
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V](bold green) "
+
+[git_branch]
+always_show_remote = true
+
+[git_commit]
+only_detached = false
+
+[hostname]
+ssh_only = false
+
+[username]
+format = "[$user]($style) / "
+show_always = true
