@@ -114,7 +114,7 @@ eval "$(starship init zsh)"
 
 # functions
 source $HOME/.config/zsh/functions/git_branch.zsh
-#source $HOME/.config/zsh/functions/bazel_options.zsh
+source $HOME/.config/zsh/functions/bazel_options.zsh
 #source $HOME/.config/zsh/functions/bazel_targets.zsh
 #source $HOME/.config/zsh/local_setup.zsh
 source $HOME/.config/zsh/aliases.zsh
