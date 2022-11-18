@@ -22,17 +22,12 @@ source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/bindings.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/coc.vim
-source $HOME/.config/nvim/csv.vim
 source $HOME/.config/nvim/quickhl.vim
-source $HOME/.config/nvim/vista.vim
+source $HOME/.config/nvim/formatter.lua
 
 " Default new pane
 set splitbelow
 set splitright
-
-" clang format
-let g:clang_format#auto_format = 1
-let g:clang_format#command = "clang-format-11"
 
 let g:webdevicons_enable = 1
 
@@ -41,5 +36,11 @@ autocmd BufWritePre *.py execute ':Black'
 
 " omnisharp
 autocmd BufWritePre *.cs execute ':OmniSharpCodeFormat'
+
+" formatter.vim
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
 
 colorscheme OceanicNext

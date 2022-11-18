@@ -22,8 +22,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'grailbio/bazel-compilation-database'
 
-Plug 'rhysd/vim-clang-format'
-
 Plug 'OmniSharp/omnisharp-vim'
 
 " Color schemes
@@ -34,5 +32,12 @@ Plug 'psf/black', { 'branch': 'stable' }
 
 " Fonts
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'mhartington/formatter.nvim'
+
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()

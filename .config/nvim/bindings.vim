@@ -2,9 +2,9 @@
 let mapleader = " "
 
 " Search in buffers
-nnoremap <Leader>O :Buffers <cr>
-nnoremap <Leader>P :FZF <cr>
-nnoremap <Leader>I :Lines <cr>
+nnoremap <Leader>P <cmd>Telescope find_files<cr>
+nnoremap <Leader>O <cmd>Telescope buffers<cr>
+nnoremap <Leader>I <cmd>Telescope live_grep<cr>
 
 " Find everywhere
 nnoremap <Leader>F :Find <cr>
