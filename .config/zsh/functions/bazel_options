@@ -1,3 +1,4 @@
 --test_filter=
 --compilation_mode=dbg
 --remote_cache=
+--test_output=all
