@@ -1,4 +1,7 @@
---test_filter=
+--cache_test_results=no
 --compilation_mode=dbg
+--jobs
+--keep_going
 --remote_cache=
+--test_filter=
 --test_output=all
