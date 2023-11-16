@@ -8,9 +8,9 @@ vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.o.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.hlsearch = false
+vim.opt.colorcolumn = "100"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
