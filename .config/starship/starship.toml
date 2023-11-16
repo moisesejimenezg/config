@@ -5,12 +5,10 @@ vicmd_symbol = "[V](bold green) "
 
 [git_branch]
 always_show_remote = true
+symbol = " "
 
 [git_commit]
 only_detached = false
-
-[hostname]
-ssh_only = false
 
 [username]
 format = "[$user]($style) / "

@@ -76,7 +76,9 @@ plugins=(
     fzf
     git
     jump
- vi-mode)
+    vi-mode
+    zoxide
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,13 +115,30 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 #if [ "$TMUX" = "" ]; then tmux; fi
 
+export CONFIG_HOME=$HOME/.config
 # functions
-source $HOME/.config/zsh/functions/git_branch.zsh
-source $HOME/.config/zsh/functions/bazel_options.zsh
-#source $HOME/.config/zsh/functions/bazel_targets.zsh
-#source $HOME/.config/zsh/local_setup.zsh
-source $HOME/.config/zsh/aliases.zsh
+source $CONFIG_HOME/zsh/functions/functions.zsh
 
 zstyle ':completion:*' completer _expand_alias _complete _ignored
 export TMUX_CONF=$HOME/.tmux.conf
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:/home/linuxbrew/.linuxbrew/bin/:$PATH
+source "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/opt/vale
+export CUDA_PATH=/usr/local/cuda
+
+eval "$(zoxide init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/moises.jimenez/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# tokens
+export GITHUB_API_TOKEN=$(<$HOME/tokens/GithubRosBackPorting)
+export GITLAB_TOKEN=$(<$HOME/tokens/GitlabCli)
+
+export FZF_DEFAULT_COMMAND="rg --files --ignore-files"
