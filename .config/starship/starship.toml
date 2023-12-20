@@ -4,12 +4,11 @@ error_symbol = "[✗](bold red) "
 vicmd_symbol = "[V](bold green) "
 
 [git_branch]
-always_show_remote = true
 symbol = " "
 
 [git_commit]
 only_detached = false
 
-[username]
-format = "[$user]($style) / "
-show_always = true
+[time]
+disabled = false
+time_format = "%H:%m"
