@@ -12,4 +12,12 @@ export FZF_DEFAULT_COMMAND="$GIT_LS_COMMAND | fd --type f --type l $FD_OPTIONS"
 
 export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
-export FZF_DEFAULT_OPTS="--reverse --preview 'batcat --color=always {}'"
+#export FZF_DEFAULT_OPTS="--reverse --preview 'batcat --color=always {}'"
+export FZF_DEFAULT_OPTS="--no-mouse \
+                         --height 50% -1 \
+                         --reverse \
+                         --multi \
+                         --inline-info \
+                         --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' \
+                         --preview-window='right:hidden:wrap' \
+                         --bind='f3:execute(batcat --style=numbers {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(batcat {+} | xclip -i -sel clip)'"
