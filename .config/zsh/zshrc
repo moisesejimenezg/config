@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell" # set by `omz`
+# ZSH_THEME="robbyrussell" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,7 +109,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -118,7 +117,6 @@ export CONFIG_HOME=$HOME/.config
 source $CONFIG_HOME/zsh/functions/functions.zsh
 
 zstyle ':completion:*' completer _expand_alias _complete _ignored
-export TMUX_CONF=$HOME/.tmux.conf
 export PATH=$HOME/bin:/home/linuxbrew/.linuxbrew/bin/:$PATH
 source "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/go/bin
@@ -136,8 +134,7 @@ esac
 # pnpm end
 
 # tokens
+
 export GITHUB_API_TOKEN=$(<$HOME/tokens/GithubRosBackPorting)
 export GITLAB_TOKEN=$(<$HOME/tokens/GitlabCli)
-
-export FZF_DEFAULT_COMMAND="rg --files --ignore-files"
-export FZF_DEFAULT_OPTS="--reverse --preview 'batcat --color=always {}'"
+source $CONFIG_HOME/zsh/environment_variables.zsh
