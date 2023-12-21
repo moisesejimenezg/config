@@ -1,5 +1,5 @@
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"
+success_symbol = "[❯](bold green)"
 error_symbol = "[✗](bold red) "
 vicmd_symbol = "[V](bold green) "
 
@@ -9,6 +9,12 @@ symbol = " "
 [git_commit]
 only_detached = false
 
+[git_metrics]
+disabled = false
+
 [time]
 disabled = false
 time_format = "%H:%m"
+
+[sudo]
+disabled = false
