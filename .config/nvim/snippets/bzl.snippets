@@ -1,0 +1,54 @@
+snippet ccl
+	cc_library(
+		name = "${1}",
+		hdrs = glob(["include/**/*.hpp"]),
+		srcs = glob(["src/*.cpp"]),
+		strip_include_prefix = "include",
+		deps = [
+		    "",
+	    ],
+	)
+
+snippet cct
+	cc_test(
+		name = "${1}_test",
+		srcs = [""],
+		deps = [
+			":${1}",
+		],
+	)
+snippet rosp
+	ros_pkg(
+		name = "${1}_pkg",
+		cc_libraries = [":${1}"],
+		description = "",
+		license = "Apex.AI Proprietary License",
+		maintainer_email = "support@apex.ai",
+		maintainer_name = "Apex.AI",
+		pkg_name = "${1}",
+		version = "0.0.1",
+		visibility = ["//visibility:public"],
+		deps = [
+		],
+	)
+snippet rospd
+	load("//tools/bazel/rules_ros_pkg:defs.bzl", "ros_pkg")
+snippet rosm
+	ros_pkg(
+		name = "${1}_pkg",
+		msg_libraries = [":${1}"],
+		description = "",
+		license = "Apex.AI Proprietary License",
+		maintainer_email = "support@apex.ai",
+		maintainer_name = "Apex.AI",
+		pkg_name = "${1}",
+		version = "0.0.1",
+		visibility = ["//visibility:public"],
+        deps = ROSIDL_COMMON_PKGS,
+	)
+snippet rosmd
+    load("@apex//grace/rosidl/rules_rosidl:defs.bzl", "ROSIDL_COMMON_PKGS")
+snippet vispub
+	visibility = ["//visibility:public"],
+snippet axi
+    tags = ["exclude_sca"],
