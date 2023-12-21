@@ -7,6 +7,11 @@ alias gpc='git push --set-upstream origin $(git_current_branch)'
 alias gstap='git stash pop'
 alias gst='git status -s'
 
+# yadm
+alias yst="yadm status -s"
+alias yaup="yadm add -up"
+alias yd="yadm diff"
+
 # apps
 alias cat="batcat"
 
