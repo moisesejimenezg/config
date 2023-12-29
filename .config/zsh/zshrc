@@ -1,4 +1,3 @@
-if [ "$TMUX" = "" ]; then tmux; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -137,4 +136,7 @@ esac
 
 export GITHUB_API_TOKEN=$(<$HOME/tokens/GithubRosBackPorting)
 export GITLAB_TOKEN=$(<$HOME/tokens/GitlabCli)
+export GRAMMARLY_TOKEN=$(<$HOME/tokens/grammarly)
 source $CONFIG_HOME/zsh/environment_variables.zsh
+
+source $CONFIG_HOME/zsh/plugins/fzf-git.sh
