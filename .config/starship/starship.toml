@@ -14,7 +14,7 @@ disabled = false
 
 [time]
 disabled = false
-time_format = "%H:%m"
+time_format = "%H:%M"
 
 [sudo]
 disabled = false
