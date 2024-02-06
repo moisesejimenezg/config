@@ -1,5 +1,5 @@
 snippet log
-    print(__name__, "${1}:", ${1})
+    print("MJ_LOG: ${TM_FILENAME}@${TM_LINE_NUMBER}: ${1} =", ${1})
 
 snippet msg
-    print(__name__, "${1}")
+    print("MJ_LOG: ${TM_FILENAME}@${TM_LINE_NUMBER}:", "${1}")
