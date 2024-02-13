@@ -36,4 +36,5 @@ return require("packer").startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim" },
 	})
 	use("renerocksai/calendar-vim")
+	use("smjonas/inc-rename.nvim")
 end)
