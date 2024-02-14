@@ -7,8 +7,8 @@ cmp.setup({
 		end,
 	},
 	window = {
-         completion = cmp.config.window.bordered(),
-         documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -50,16 +50,4 @@ cmp.setup.cmdline(":", {
 	}, {
 		{ name = "cmdline" },
 	}),
-})
-
--- Set up lspconfig.
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lspconfig")["clangd"].setup({
-	capabilities = capabilities,
-})
-require("lspconfig")["rust_analyzer"].setup({
-	capabilities = capabilities,
-})
-require("lspconfig")["pyright"].setup({
-	capabilities = capabilities,
 })
