@@ -94,6 +94,7 @@ local cpp_message = ls.snippet("msg", {
 
 ls.add_snippets("cpp", {
 	cpp_logging,
+	apex_logging,
 	cpp_message,
 }, {
 	key = "cpp",
