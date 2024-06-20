@@ -168,6 +168,35 @@ ls.add_snippets("python", {
     key = "python",
 })
 
+local cmake_logging = ls.snippet("log", {
+    ls.text_node('MESSAGE("MJ_LOG: '),
+    ls.function_node(get_filename),
+    ls.text_node("@"),
+    ls.function_node(get_line_number),
+    ls.text_node(": "),
+    ls.insert_node(1, "variable"),
+    ls.text_node(": ${"),
+    ls.function_node(copy, 1),
+    ls.text_node('}")'),
+})
+
+local cmake_message = ls.snippet("msg", {
+    ls.text_node('MESSAGE("MJ_LOG: '),
+    ls.function_node(get_filename),
+    ls.text_node("@"),
+    ls.function_node(get_line_number),
+    ls.text_node(": "),
+    ls.insert_node(1, "message"),
+    ls.text_node('")'),
+})
+
+ls.add_snippets("cmake", {
+    cmake_logging,
+    cmake_message,
+}, {
+    key = "cmake",
+})
+
 ls.add_snippets("all", {
     ls.snippet("autotrigger", {
         ls.text_node("autosnippet"),
