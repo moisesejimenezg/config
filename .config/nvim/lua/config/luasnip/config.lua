@@ -114,8 +114,7 @@ local cpp_function_declaration = ls.snippet({ trig = "func_dec", docstring = "C+
 local cpp_function_definition = ls.snippet({ trig = "func_def", docstring = "C++ function definition" }, {
     ls.insert_node(1, "return_type"),
     ls.text_node(" "),
-    ls.insert_node(2, "context"),
-    ls.text_node("::"),
+    ls.choice_node(2, { ls.snippet_node(nil, { ls.insert_node(1, "context"), ls.text_node("::") }), {} }),
     ls.insert_node(3, "name"),
     ls.text_node({ "() {", "" }),
     ls.function_node(copy, 1),
