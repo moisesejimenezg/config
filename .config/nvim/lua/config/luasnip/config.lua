@@ -1,5 +1,6 @@
 local types = require("luasnip.util.types")
 local ls = require("luasnip")
+local k = require("luasnip.nodes.key_indexer").new_key
 
 ls.setup({
     keep_roots = true,
@@ -102,27 +103,26 @@ local cpp_message = ls.snippet("msg", {
     ls.text_node('" << std::endl;'),
 })
 
-local cpp_function_declaration = ls.snippet({ trig = "func_dec", docstring = "C++ function declaration" }, {
-    ls.insert_node(1, "return_type"),
-    ls.text_node(" "),
-    ls.insert_node(2, "name"),
-    ls.text_node("() "),
-    ls.insert_node(3, "modifiers"),
-    ls.text_node(";"),
-})
-
-local cpp_function_definition = ls.snippet({ trig = "func_def", docstring = "C++ function definition" }, {
-    ls.insert_node(1, "return_type"),
+local cpp_function = ls.snippet({ trig = "func", docstring = "C++ function definition or declaration" }, {
+    ls.insert_node(1, "return_type", { key = "ret_type" }),
     ls.text_node(" "),
     ls.choice_node(2, { ls.snippet_node(nil, { ls.insert_node(1, "context"), ls.text_node("::") }), {} }),
     ls.insert_node(3, "name"),
-    ls.text_node({ "() {", "" }),
-    ls.function_node(copy, 1),
-    ls.text_node(" "),
-    ls.insert_node(4, "return_variable_name"),
-    ls.text_node({ "{};", "return " }),
-    ls.function_node(copy, 4),
-    ls.text_node({ ";", "}" }),
+    ls.text_node("()"),
+    ls.choice_node(4, {
+        ls.snippet_node(nil, {
+            ls.text_node({ " {", "" }),
+            ls.function_node(function(args)
+                return args[1]
+            end, k("ret_type")),
+            ls.text_node(" "),
+            ls.insert_node(1, "return_variable_name"),
+            ls.text_node({ "{};", "return " }),
+            ls.function_node(copy, 1),
+            ls.text_node({ ";", "}" }),
+        }),
+        ls.text_node(";"),
+    }),
 })
 
 local cpp_argument = ls.snippet({ trig = "var", docstring = "C++ argument for functions" }, {
@@ -136,8 +136,7 @@ ls.add_snippets("cpp", {
     cpp_logging,
     apex_logging,
     cpp_message,
-    cpp_function_declaration,
-    cpp_function_definition,
+    cpp_function,
     cpp_argument,
 }, {
     key = "cpp",
