@@ -37,4 +37,9 @@ return require("packer").startup(function(use)
     })
     use("renerocksai/calendar-vim")
     use("smjonas/inc-rename.nvim")
+    --use({
+    --"git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git",
+    --})
+    use("alexander-born/bazel.nvim")
+    use("alexander-born/cmp-bazel")
 end)
