@@ -103,6 +103,14 @@ local cpp_message = ls.snippet("msg", {
     ls.text_node('" << std::endl;'),
 })
 
+local apex_message = ls.snippet("amsg", {
+    ls.text_node("APEX_INFO("),
+    ls.insert_node(1, "m_logger"),
+    ls.text_node(', "'),
+    ls.insert_node(2, "msg"),
+    ls.text_node('");'),
+})
+
 local cpp_function = ls.snippet({ trig = "func", docstring = "C++ function definition or declaration" }, {
     ls.insert_node(1, "return_type", { key = "ret_type" }),
     ls.text_node(" "),
@@ -136,6 +144,7 @@ ls.add_snippets("cpp", {
     cpp_logging,
     apex_logging,
     cpp_message,
+    apex_message,
     cpp_function,
     cpp_argument,
 }, {
