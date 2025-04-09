@@ -7,6 +7,7 @@ vim.keymap.set("n", "<leader>O", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>i", "<cmd>Telescope grep_string<cr> <escape>")
 vim.keymap.set("n", "<leader>I", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>B", "<cmd>Telescope resume<cr>")
+vim.keymap.set("n", "<leader>G", "<cmd>CodeCompanionChat<cr>")
 
 -- Move line up /down
 vim.keymap.set("n", "<m-j>", ":m .+1<cr>")

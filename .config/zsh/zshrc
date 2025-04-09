@@ -136,6 +136,8 @@ esac
 export GITHUB_API_TOKEN=$(<$HOME/tokens/GithubRosBackPorting)
 export GITLAB_TOKEN=$(<$HOME/tokens/GitlabCli)
 export GRAMMARLY_TOKEN=$(<$HOME/tokens/grammarly)
+export OPENAI_API_KEY=$(<$HOME/tokens/OpenAI)
+export ZSH_COPILOT_AI_PROVIDER="openai"
 source $CONFIG_HOME/zsh/environment_variables.zsh
 
 source $CONFIG_HOME/zsh/plugins/fzf-git.sh
