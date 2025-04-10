@@ -23,3 +23,7 @@ export FZF_DEFAULT_OPTS="--no-mouse \
                          --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' \
                          --preview-window='right:hidden:wrap' \
                          --bind='$FZF_BINDINGS'"
+# ZVM
+export ZVM_VI_EDITOR="nvim"
+export ZVM_VI_HIGHLIGHT_BACKGROUND=white
+export ZVM_VI_HIGHLIGHT_FOREGROUND=black

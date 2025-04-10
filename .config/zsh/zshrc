@@ -74,8 +74,9 @@ plugins=(
     bazel
     fzf
     git
-    vi-mode
+    zsh-vi-mode
     zoxide
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,11 +109,15 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export CONFIG_HOME=$HOME/.config
+#
 # functions
-source $CONFIG_HOME/zsh/functions/functions.zsh
+function initialization() {
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    source $CONFIG_HOME/zsh/functions/functions.zsh
+}
+zvm_after_init_commands+=(initialization)
 
 zstyle ':completion:*' completer _expand_alias _complete _ignored
 export PATH=$HOME/bin:/home/linuxbrew/.linuxbrew/bin/:$PATH
