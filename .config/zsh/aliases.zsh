@@ -29,12 +29,10 @@ alias buildify="bazel run //:buildifier"
 # apex
 alias repo.fix='bazel run --noshow_progress --ui_event_filters=-info --run_under="cd $(pwd) &&" //tools/repo:repo.fix --'
 alias repo.check='bazel run --noshow_progress --ui_event_filters=-info --run_under="cd $(pwd) &&" //tools/repo:repo.check --'
-alias uid='bazel run --run_under="cd $PWD &&" @apex//tools/identify_test_uid:main'
 alias apex_doc='bazel run --noshow_progress --ui_event_filters=-info --run_under="cd $(pwd) &&" //apex_internal/tools/apex_doc_tools:apex_doc --'
 
 # tmux
 alias tmrn="tmux rename-window"
 
 # nvim
-alias v="nvim"
 alias zk="open_zk"
