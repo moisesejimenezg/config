@@ -16,6 +16,7 @@ alias yd="yadm diff"
 # apps
 alias cat="batcat"
 alias k="kill -9 **"
+alias cli="format_cpp_files"
 
 # bazel
 alias bt="bazel test"
