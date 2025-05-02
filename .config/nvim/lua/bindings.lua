@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- Search
-vim.keymap.set("n", "<leader>P", "<cmd>Telescope find_files<cr>")
+vim.keymap.set("n", "<leader>P", "<cmd>Telescope find_files hidden=True<cr>")
 vim.keymap.set("n", "<leader>O", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>i", "<cmd>Telescope grep_string<cr> <escape>")
 vim.keymap.set("n", "<leader>I", "<cmd>Telescope live_grep<cr>")

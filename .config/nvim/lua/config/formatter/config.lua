@@ -20,6 +20,9 @@ require("formatter").setup({
                 if string.find(utils.get_current_buffer_file_path(), "apex_customer") then
                     return nil
                 end
+                if string.find(utils.get_current_buffer_file_path(), "repos/third_party") then
+                    return nil
+                end
                 local code_style = vim.fn.findfile(
                     "ament_code_style.cfg",
                     "/home/moises.jimenez/ade-home/gc/apex_ws/src/tools/ament/**"
