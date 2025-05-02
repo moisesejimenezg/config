@@ -5,7 +5,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.list = true
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -30,7 +29,6 @@ vim.cmd("colorscheme OceanicNext")
 --vim.cmd("colorscheme gruvbox")
 --vim.cmd("colorscheme nord")
 --vim.cmd("colorscheme oceanic_material")
---vim.cmd("colorscheme snow")
 --vim.cmd("colorscheme snow")
 --vim.cmd("colorscheme solarized8_low")
 --vim.cmd("colorscheme sonokai")

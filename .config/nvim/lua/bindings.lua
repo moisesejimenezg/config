@@ -18,6 +18,8 @@ vim.keymap.set("n", "<c-j>", "<c-w><c-j>")
 vim.keymap.set("n", "<c-k>", "<c-w><c-k>")
 vim.keymap.set("n", "<c-h>", "<c-w><c-h>")
 vim.keymap.set("n", "<c-l>", "<c-w><c-l>")
+
+-- NvimTree
 vim.keymap.set("n", "<leader>m", "<cmd>NvimTreeFindFile<cr>")
 
 -- Resizing panes
