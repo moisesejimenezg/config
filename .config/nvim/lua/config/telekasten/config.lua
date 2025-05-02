@@ -1,3 +1,5 @@
+local home_path = "/home/moises.jimenez/Documents/apexai/apexai"
 require("telekasten").setup({
-    home = vim.fn.expand("/home/moises.jimenez/Documents/apexai/apexai"), -- Put the name of your notes directory here
+    home = home_path,
+    template_new_daily = home_path .. "/templates/daily.md",
 })

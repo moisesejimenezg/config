@@ -33,6 +33,3 @@ alias apex_doc='bazel run --noshow_progress --ui_event_filters=-info --run_under
 
 # tmux
 alias tmrn="tmux rename-window"
-
-# nvim
-alias zk="open_zk"

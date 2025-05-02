@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>K", ":resize -2<cr>")
 -- Clipboard
 vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>e", ":lua vim.diagnostic.open_float()<cr>")

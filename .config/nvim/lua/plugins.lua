@@ -32,17 +32,13 @@ return require("packer").startup(function(use)
     use({ "L3MON4D3/LuaSnip", tag = "v2.*" })
     use("saadparwaiz1/cmp_luasnip")
     use({
-        "renerocksai/telekasten.nvim",
+        "nvim-telekasten/telekasten.nvim",
         requires = { "nvim-telescope/telescope.nvim" },
     })
-    use("renerocksai/calendar-vim")
+    use("nvim-telekasten/calendar-vim")
     use("smjonas/inc-rename.nvim")
-    --use({
-    --"git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git",
-    --})
     use("alexander-born/bazel.nvim")
     use("alexander-born/cmp-bazel")
     use("github/copilot.vim")
-    --use("CopilotC-Nvim/CopilotChat.nvim")
     use("olimorris/codecompanion.nvim")
 end)
