@@ -21,10 +21,3 @@ require("lspconfig")["pyright"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
-require("lspconfig").grammarly.setup({
-    filetypes = { "markdown" },
-    init_options = {
-        clientId = vim.env.GRAMMARLY_TOKEN,
-    },
-    cmd = { "grammarly-languageserver", "--stdio" },
-})
