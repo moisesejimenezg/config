@@ -32,5 +32,13 @@ vim.keymap.set("n", "<leader>K", ":resize -2<cr>")
 vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
 
+vim.keymap.set("n", "<leader>pr", function()
+    local path = vim.fn.expand("%")
+    if path ~= "" then
+        vim.fn.setreg("+", path)
+        vim.notify("Copied relative path: " .. path)
+    end
+end, { desc = "Copy relative path to clipboard" })
+
 -- Diagnostics
 vim.keymap.set("n", "<leader>e", ":lua vim.diagnostic.open_float()<cr>")
