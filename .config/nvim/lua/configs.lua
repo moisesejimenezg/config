@@ -1,6 +1,7 @@
 require("config/cmp/config")
 require("config/hop/config")
 require("config/hop/bindings")
+require("config/dooing/config")
 require("config/formatter/config")
 require("config/gitsigns/config")
 require("config/inc_rename/config")
