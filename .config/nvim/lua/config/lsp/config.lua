@@ -7,17 +7,7 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
 end
 
--- Set up lspconfig.
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lspconfig")["clangd"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-require("lspconfig")["rust_analyzer"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-require("lspconfig")["pyright"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+vim.lsp.enable("clangd")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("pyright")
+vim.lsp.enable("GitHub Copilot")
